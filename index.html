@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- @NOTE linking our CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- @NOTE linking firebase version 8 CDNs first -->
+    <script
+      defer
+      src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"
+    ></script>
+    <script
+      defer
+      src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"
+    ></script>
+
+    <!-- @NOTE initializing firebase -->
+    <script defer src="init-firebase.js"></script>
+
+    <!-- @NOTE link our script.js AFTER we load initialize firebase -->
+    <script defer src="script.js"></script>
+
+    <title>Fire Chat</title>
+  </head>
+
+  <body>
+    <div id="chatbox-container">
+
+      <h1 id="title">Fire Chat</h1>
+
+      <!-- @NOTE this is where we'll append messages -->
+      <div id="all-messages">
+
+        <!-- @NOTE sample message -->
+
+        <!--
+        <div class="single-message">
+
+            <img class="single-message-img" src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png">
+
+            <div>
+
+                <p class="single-message-username">
+                    Andy
+                </p>
+
+                <p class="single-message-email">
+                    andy@gmail.com
+                </p>
+
+                <p>
+                    Hello World!
+                </p>
+
+                <p class="single-message-date">
+                    7/30/2026
+                </p>
+
+                <p class="single-message-time">
+                    10:30 PM
+                </p>
+
+            </div>
+
+        </div>
+        -->
+
+      </div>
+
+      <div id="typing-container">
+
+        <form id="chat-form">
+
+          <!-- @NOTE this input has an id #username -->
+          <div class="input-container">
+            <label>Username:</label>
+            <input
+              type="text"
+              id="username"
+              placeholder="Enter Username"
+            />
+          </div>
+
+          <div class="input-container">
+            <label>Email:</label>
+            <input
+              type="email"
+              id="email"
+              placeholder="Enter Email"
+            />
+          </div>
+
+          <!-- @NOTE this input has an id #profile -->
+          <div class="input-container">
+
+            <label>Profile:</label>
+
+            <img
+              id="preview-image"
+              src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png"
+            />
+
+            <input
+              type="text"
+              id="profile"
+              placeholder="Enter Image URL"
+              value="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png"
+            />
+
+          </div>
+
+          <!-- @NOTE this input has an id #message -->
+          <div class="input-container">
+            <label>Message:</label>
+            <input
+              type="text"
+              id="message"
+              placeholder="Type a message..."
+            />
+          </div>
+
+          <button id="send-btn">
+            Send
+          </button>
+
+        </form>
+
+      </div>
+
+    </div>
+
+    <script>
+
+      let imagePreview = document.getElementById("preview-image");
+      let imageInput = document.getElementById("profile");
+
+      imageInput.oninput = function () {
+
+        if (imageInput.value.trim() !== "") {
+          imagePreview.src = imageInput.value;
+        }
+        else {
+          imagePreview.src =
+            "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png";
+        }
+
+      };
+
+    </script>
+
+  </body>
+</html>

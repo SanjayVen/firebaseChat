@@ -1,0 +1,198 @@
+/* 
+    @NOTE color palette generated with https://coolors.co
+    also using CSS variables to make things easier to change
+    in the future. learn more about CSS vars here:
+    https://www.w3schools.com/css/css3_variables.asp
+
+    primary: #16262E
+    secondary: #2E4756
+    accent: #3C7A89
+*/
+
+:root {
+  --primary: #1c2c35;
+  --secondary: #2c5763;
+  --accent: #63a9bb;
+}
+
+body {
+  /* size and colors */
+  height: 100vh;
+  background-color: var(--primary);
+  color: #fff;
+
+  /* flexbox styling */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* text */
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+#title {
+  text-align: center;
+}
+
+#chatbox-container {
+  /* size and colors */
+  width: 90vw;
+  height: 90vh;
+  background-color: var(--secondary);
+
+  /* CSS box model */
+  margin: 0 auto;
+  padding: 1%;
+  border-radius: 10px;
+
+  /* flexbox */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#all-messages {
+  /* size and colors */
+  width: 90%;
+  height: 70%;
+  background-color: white;
+  color: black;
+
+  /* CSS box model */
+  border-radius: 10px;
+  margin: 1%;
+  padding: 10px;
+
+  /* visibility */
+  overflow-y: auto;
+}
+
+#typing-container {
+  /* size and colors */
+  width: 90%;
+  background-color: var(--accent);
+
+  /* CSS box model */
+  border-radius: 10px;
+  margin: 1%;
+  padding: 1%;
+
+  /* flexbox */
+  display: flex;
+  justify-content: center;
+}
+
+form {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.input-container label {
+  width: 90px;
+  font-weight: bold;
+}
+
+form input {
+  flex: 1;
+  padding: 6px;
+  font-size: 16px;
+}
+
+#send-btn {
+  width: 150px;
+  align-self: center;
+
+  padding: 10px;
+
+  background-color: var(--secondary);
+  color: white;
+
+  border: none;
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  font-size: 16px;
+}
+
+#send-btn:hover {
+  background-color: var(--primary);
+}
+
+#send-btn:active {
+  transform: scale(.98);
+}
+
+/* ===========================
+   MESSAGE STYLING
+=========================== */
+
+.single-message {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 15px;
+
+  margin-bottom: 15px;
+  padding: 10px;
+
+  border-bottom: 1px solid #ddd;
+}
+
+.single-message-img {
+  width: 55px;
+  height: 55px;
+
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* This wraps all the text */
+.message-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.single-message-username {
+  font-weight: bold;
+  margin: 0;
+}
+
+.single-message-email {
+  color: gray;
+  font-size: 13px;
+  margin: 2px 0;
+}
+
+.single-message-text {
+  margin: 6px 0;
+  font-size: 16px;
+}
+
+.single-message-date,
+.single-message-time {
+  display: inline-block;
+  font-size: 11px;
+  color: gray;
+  margin-right: 10px;
+}
+
+#preview-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
